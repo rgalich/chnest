@@ -6,4 +6,8 @@ export class AppService {
   constructor(config: ConfigService) {
 
   }
+
+  root(): string {
+    return 'Hello World!';
+  }
 }
