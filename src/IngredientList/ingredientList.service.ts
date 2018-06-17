@@ -12,7 +12,12 @@ export class IngredientListService {
   ) {}
 
   async findAll(): Promise<IngredientListDto[]> {
-    const response = await this.ingredientListRepository.find();
+    const response = await this.ingredientListRepository.find({join: {
+      alias: IngredientList.name,
+      leftJoinAndSelect: {
+        ingredient: `${IngredientList.name}.ingredient`,
+      },
+    }});
     return plainToClass(IngredientListDto, response);
   }
 }
