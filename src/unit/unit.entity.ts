@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { IngredientList } from '../IngredientList/ingredientList.entity';
 
 @Entity()
 export class Unit {
@@ -10,4 +11,7 @@ export class Unit {
         unique: true,
     })
     name: string;
+
+    @OneToMany(type => IngredientList, ingredientLists => ingredientLists.ingredient)
+    ingredientLists: IngredientList[]
 }
