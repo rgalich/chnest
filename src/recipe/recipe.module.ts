@@ -12,4 +12,4 @@ import { RecipeController } from './recipe.controller';
   ],
   controllers: [RecipeController],
 })
-export class UnitModule {}
+export class RecipeModule {}

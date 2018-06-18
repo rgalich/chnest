@@ -5,9 +5,11 @@ import { ConfigModule } from './config/config.module';
 import { IngredientModule } from './ingredient/ingredient.module';
 import { UnitModule } from './unit/unit.module';
 import { IngredientListModule } from './IngredientList/ingredientList.module';
+import { StepModule } from './step/step.module';
+import { RecipeModule } from './recipe/recipe.module';
 
 @Module({
-  imports: [ConfigModule, IngredientModule, UnitModule, IngredientListModule],
+  imports: [ConfigModule, IngredientModule, UnitModule, IngredientListModule, StepModule, RecipeModule],
   controllers: [AppController],
   providers: [AppService],
 })
