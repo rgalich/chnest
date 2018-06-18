@@ -1,15 +1,15 @@
 import { ApiModelProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { IngredientListDto } from '../../IngredientList/dtos/ingredientListDto';
+import { CreateIngredientListDto } from '../../IngredientList/dtos/create.ingredientListDto';
 
 export class RecipeDto {
     @ApiModelProperty()
-    readonly id: number;
+    public id: number;
 
     @ApiModelProperty()
-    readonly name: string;
+    public name: string;
 
     @ApiModelProperty()
-    @Type(() => IngredientListDto)
-    readonly ingredientLists: IngredientListDto[];
+    @Type(() => CreateIngredientListDto)
+    public ingredientLists: CreateIngredientListDto[];
 }

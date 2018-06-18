@@ -3,10 +3,7 @@ import { IngredientDto } from '../../ingredient/dtos/ingredientDto';
 import { UnitDto } from '../../unit/dtos/unitDto';
 import { RecipeDto } from '../../recipe/dtos/recipeDto';
 
-export class IngredientListDto {
-    @ApiModelProperty()
-    public id: number;
-
+export class CreateIngredientListDto {
     @ApiModelProperty()
     public name: string;
 
