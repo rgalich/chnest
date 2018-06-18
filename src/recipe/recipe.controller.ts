@@ -12,6 +12,7 @@ export class RecipeController {
     @Post()
     @ApiOperation({ title: 'create recipe' })
     async create(@Body() recipe: CreateRecipeDto): Promise<RecipeDto> {
+
         return await this.recipeService.create(recipe);
     }
 }

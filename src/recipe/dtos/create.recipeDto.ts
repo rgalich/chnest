@@ -7,7 +7,7 @@ export class CreateRecipeDto {
     @ApiModelProperty()
     readonly name: string;
 
-    @ApiModelProperty()
+    @ApiModelProperty({ type: IngredientListDto, isArray: true })
     @Type(() => IngredientListDto)
     readonly ingredientLists: IngredientListDto[];
 }

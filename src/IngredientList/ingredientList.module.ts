@@ -11,5 +11,6 @@ import { IngredientListController } from './ingredientList.controller';
     IngredientListService,
   ],
   controllers: [IngredientListController],
+  exports: [IngredientListService],
 })
 export class IngredientListModule {}
