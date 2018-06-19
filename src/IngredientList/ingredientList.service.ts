@@ -3,7 +3,6 @@ import { Repository } from 'typeorm';
 import { IngredientList } from './ingredientList.entity';
 import { IngredientListDto } from './dtos/ingredientListDto';
 import { plainToClass } from 'class-transformer';
-import { CreateIngredientListDto } from './dtos/create.ingredientListDto';
 
 @Injectable()
 export class IngredientListService {
@@ -22,7 +21,7 @@ export class IngredientListService {
     return plainToClass(IngredientListDto, response);
   }
 
-  async create(ingredientList: CreateIngredientListDto): Promise<IngredientListDto> {
+  async create(ingredientList: IngredientListDto): Promise<IngredientListDto> {
 
     await this.ingredientListRepository.save(ingredientList);
 

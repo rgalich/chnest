@@ -2,7 +2,6 @@ import { Controller, Get, Post, Body } from '@nestjs/common';
 import { IngredientService } from './ingredient.service';
 import { IngredientDto } from './dtos/ingredientDto';
 import { ApiUseTags, ApiBearerAuth, ApiResponse, ApiOperation } from '@nestjs/swagger';
-import { CreateIngredientDto } from './dtos/create.ingredientDto';
 
 @ApiUseTags('ingredient')
 @Controller('ingredient')
@@ -21,7 +20,7 @@ export class IngredientController {
 
     @Post()
     @ApiOperation({ title: 'create ingredient' })
-    async create(@Body() ingredient: CreateIngredientDto): Promise<IngredientDto> {
+    async create(@Body() ingredient: IngredientDto): Promise<IngredientDto> {
         return await this.ingredientService.create(ingredient);
     }
 }

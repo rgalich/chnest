@@ -1,6 +1,8 @@
 import { Injectable, Inject, HttpStatus, HttpException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { Step } from './step.entity';
+import { StepDto } from './dtos/stepDto';
+import { plainToClass } from 'class-transformer';
 
 @Injectable()
 export class StepService {
@@ -9,8 +11,10 @@ export class StepService {
     private readonly recipeRepository: Repository<Step>,
   ) {}
 
-  // async findAll(): Promise<UnitDto[]> {
-  //   const response = await this.unitRepository.find();
-  //   return plainToClass(UnitDto, response);
-  // }
+  async create(step: StepDto): Promise<StepDto> {
+
+      await this.recipeRepository.save(step);
+
+      return plainToClass(StepDto, step);
+  }
 }

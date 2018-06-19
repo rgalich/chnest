@@ -1,7 +1,7 @@
 import { ApiModelProperty } from '@nestjs/swagger';
-import { IngredientDto } from '../../ingredient/dtos/ingredientDto';
-import { UnitDto } from '../../unit/dtos/unitDto';
-import { RecipeDto } from '../../recipe/dtos/recipeDto';
+import { IngredientDto } from 'ingredient/dtos/ingredientDto';
+import { UnitDto } from 'unit/dtos/unitDto';
+import { RecipeDto } from 'recipe/dtos/recipeDto';
 
 export class IngredientListDto {
     @ApiModelProperty()

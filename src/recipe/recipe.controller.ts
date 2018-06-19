@@ -1,7 +1,6 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put } from '@nestjs/common';
 import { RecipeService } from './recipe.service';
 import { ApiUseTags, ApiBearerAuth, ApiResponse, ApiOperation } from '@nestjs/swagger';
-import { CreateRecipeDto } from './dtos/create.recipeDto';
 import { RecipeDto } from './dtos/recipeDto';
 
 @ApiUseTags('recipe')
@@ -11,8 +10,13 @@ export class RecipeController {
 
     @Post()
     @ApiOperation({ title: 'create recipe' })
-    async create(@Body() recipe: CreateRecipeDto): Promise<RecipeDto> {
-
+    async create(@Body() recipe: RecipeDto): Promise<RecipeDto> {
         return await this.recipeService.create(recipe);
+    }
+
+    @Put()
+    @ApiOperation({ title: 'update recipe' })
+    async update(@Body() recipe: RecipeDto): Promise<RecipeDto> {
+        return await this.recipeService.update(recipe);
     }
 }

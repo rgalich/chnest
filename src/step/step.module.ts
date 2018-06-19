@@ -11,5 +11,6 @@ import { StepController } from './step.controller';
     StepService,
   ],
   controllers: [StepController],
+  exports: [StepService],
 })
 export class StepModule {}
