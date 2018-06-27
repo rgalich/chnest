@@ -21,6 +21,9 @@ export class IngredientController {
     @Post()
     @ApiOperation({ title: 'create ingredient' })
     async create(@Body() ingredient: IngredientDto): Promise<IngredientDto> {
+        const toto = new IngredientDto();
+        console.log(toto);
+        console.log(ingredient);
         return await this.ingredientService.create(ingredient);
     }
 }
